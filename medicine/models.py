@@ -18,15 +18,6 @@ class Doctor(models.Model):
     def __str__(self):
         return self.name
 
-class Disease(models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
-    disease=models.CharField(max_length=500)
-    prescription=models.CharField(max_length=100000)
-
-    def __str__(self):
-        return self.disease
-
-
 class Patient(models.Model):
     patientname=models.CharField(max_length=500,default=0)
     patientcontact = models.CharField(max_length=100,default=0)
@@ -37,6 +28,17 @@ class Patient(models.Model):
     def __str__(self):
           return self.patientcontact+'-'+self.patientname
 
+class Disease(models.Model):
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    disease=models.CharField(max_length=500)
+    prescription=models.CharField(max_length=100000)
+
+    def __str__(self):
+        return self.disease
+
+
+
+
 
 class pharmacist(models.Model):
     pharmacistname = models.CharField(max_length=500)
@@ -45,3 +47,5 @@ class pharmacist(models.Model):
 
     def __str__(self):
         return self.pharmacistnasme
+class Appointment(models.Model):
+    doctor=models.ForeignKey(Doctor,on_delete=models.CASCADE)

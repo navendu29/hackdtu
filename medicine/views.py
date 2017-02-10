@@ -11,3 +11,10 @@ from django.views.generic.edit import CreateView,UpdateView
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,login
 from django.views.generic import View
+
+def doc(request):
+    doctor_list=Doctor.objects.all()
+    if len(doctor_list)==0:
+        raise Http404("No Doctors Found")
+    return render(request,'medicine/front.html',{'doctor_list':doctor_list})
+
