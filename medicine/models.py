@@ -13,6 +13,7 @@ class Doctor(models.Model):
     contactno=models.CharField(max_length=10)
     specialisation=models.CharField(max_length=40)
     workplace=models.CharField(max_length=100)
+    password=models.CharField(max_length=300,default=None)
 class Disease(models.Model):
     # patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     disease=models.CharField(max_length=500)
