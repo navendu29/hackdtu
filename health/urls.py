@@ -23,5 +23,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^medicine/',include('medicine.urls')),
+    url(r'^health/',include('medicine.urls')),
 ]
