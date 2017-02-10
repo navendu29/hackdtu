@@ -10,10 +10,10 @@ class Doctor(models.Model):
     degree=models.CharField(max_length=20)
     designation=models.CharField(max_length=30)
     doctor_dp=models.CharField(max_length=500)
-    contactno=models.IntegerField(max_length=10)
+    contactno=models.CharField(max_length=10)
     specialisation=models.CharField(max_length=40)
     workplace=models.CharField(max_length=100)
 class Disease(models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    # patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     disease=models.CharField(max_length=500)
     prescription=models.CharField(max_length=100000)
