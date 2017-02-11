@@ -12,6 +12,7 @@ urlpatterns = [
     # #  url(r'^(?P<album_id>[0-9]+)/$',views.details,name='detail'),
     # url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
     url(r'doctors/$', views.doc, name='doctors'),
+    url(r'^(?P<doc_id>[0-9]+)/$', views.detail, name='detail'),
 
     #url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
 

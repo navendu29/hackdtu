@@ -18,3 +18,8 @@ def doc(request):
         raise Http404("No Doctors Found")
     return render(request,'medicine/front.html',{'doctor_list':doctor_list})
 
+def detail(request,doc_id):
+    docdetails = get_object_or_404(Doctor, pk=doc_id)
+    return render(request, 'medicine/detail.html', {'docdetails':docdetails})
+
+
